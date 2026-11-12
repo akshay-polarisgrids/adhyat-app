@@ -1,0 +1,10 @@
+{
+  "name": "adhyat",
+  "version": "1.0.0",
+  "description": "Retro music player for Osho discourses, streamed from oshoworld.com",
+  "scripts": {
+    "start": "node server.js",
+    "sync": "node scripts/sync.js"
+  },
+  "license": "MIT"
+}

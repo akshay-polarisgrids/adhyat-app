@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adhyat</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23d9622b'/><path d='M6 4l6 4-6 4z' fill='%23f1ead6'/></svg>">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#d9622b">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="device">
+  <header class="top">
+    <span class="brand">ADHYAT</span>
+    <span class="tag">DISCOURSE PLAYER</span>
+  </header>
+
+  <section class="lcd">
+    <div id="player" class="view">
+      <div class="now">
+        <div class="cover"><img id="cover" alt="" referrerpolicy="no-referrer"></div>
+        <div class="meta">
+          <div class="label" id="lang">--</div>
+          <div class="title" id="title">Insert discourse</div>
+          <div class="album" id="album">Open the library to pick one</div>
+          <div class="trackno" id="trackno"></div>
+        </div>
+      </div>
+      <canvas id="eq" class="eq"></canvas>
+      <div class="timeline">
+        <div class="bar" id="bar"><div class="fill" id="fill"></div></div>
+        <div class="times"><span id="cur">0:00:00</span><button id="viz" title="Switch visualizer">BOX</button><span id="dur">0:00:00</span></div>
+      </div>
+    </div>
+
+    <div id="library" class="view" hidden>
+      <div class="libhead">
+        <button class="tab" data-lang="hindi">HINDI</button>
+        <button class="tab" data-lang="english">ENGLISH</button>
+      </div>
+      <div class="crumb"><button id="back" hidden>&lt; BACK</button><span id="crumb"></span></div>
+      <input id="search" type="search" placeholder="search folders…" autocomplete="off">
+      <ul id="list" class="list"></ul>
+    </div>
+  </section>
+
+  <div class="controls">
+    <button id="prev" title="Previous">|&lt;</button>
+    <button id="back30" title="Back 30s">-30</button>
+    <button id="play" class="big" title="Play / pause">&#9654;</button>
+    <button id="fwd30" title="Forward 30s">+30</button>
+    <button id="next" title="Next">&gt;|</button>
+  </div>
+
+  <div class="row">
+    <label class="vol">VOL <input id="vol" type="range" min="0" max="1" step="0.01" value="1"></label>
+    <button id="speed" class="pill" title="Playback speed">1x</button>
+    <button id="save" class="pill" title="Download to play offline" disabled aria-label="Save offline">↓</button>
+    <button id="reelsBtn" class="pill" title="Short discourse clips with visuals">CLIPS</button>
+    <button id="lib" class="pill accent">LIBRARY</button>
+  </div>
+</main>
+<div id="reels" hidden>
+  <canvas id="rcv"></canvas>
+  <div id="feed"></div>
+  <button id="rclose" title="Close reels">&#10005;</button>
+</div>
+<audio id="audio" preload="metadata"></audio>
+<script src="app.js"></script>
+<script src="reels.js"></script>
+</body>
+</html>
